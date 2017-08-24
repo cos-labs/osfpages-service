@@ -25,7 +25,7 @@ SECRET_KEY = 'e0)ffvz9q$b1ooyxb5$%@1pu=9p91g^@04&2iw-qwpmn0jwbhn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['limitless-atoll-95289.herokuapp.com', 'http://localhost:4200']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
