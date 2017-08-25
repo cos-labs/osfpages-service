@@ -4,6 +4,7 @@ from .serializers import HomeSerializer
 from .models import Home
 from rest_framework.response import Response
 import requests
+import ipdb
 
 
 # Create your views here.
@@ -17,8 +18,10 @@ class HomeViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
-    
-        return Response({'Err String':'error yo','headers': request.META ,'Body': request.body, 'json': r.json()})
+        #ipdb.set_trace()
+        meta = request.META
+        print(meta)
+        return Response({'Err String':'error yo','Body': request.body, 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
         
