@@ -10,3 +10,9 @@ class HomeViewSet(viewsets.ModelViewSet):
     """
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
+
+    def create(self, request, *args, **kwargs):
+        return Response('error', status=status.HTTP_404_CREATED, headers=headers)
+        
+        #return super(HomeViewSet, self).create(arg)
+        
