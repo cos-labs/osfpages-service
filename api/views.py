@@ -18,7 +18,7 @@ class HomeViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
     
-        return Response({'Err String':'error yo', 'error Body': request.body, 'json': r.json()})
+        return Response({'Err String':'error yo','headers': request.META ,'Body': request.body, 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
         
