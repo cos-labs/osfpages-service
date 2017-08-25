@@ -12,7 +12,7 @@ class HomeViewSet(viewsets.ModelViewSet):
     serializer_class = HomeSerializer
 
     def create(self, request, *args, **kwargs):
-        return Response('error', status=status.HTTP_404_CREATED, headers=headers)
+        return Response('error yo')
         
         #return super(HomeViewSet, self).create(arg)
         
