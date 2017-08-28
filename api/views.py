@@ -37,5 +37,5 @@ class HomeViewSet(viewsets.ModelViewSet):
             return Response({'ERROR_MESSAGE':'Error: you do not have write access to this project' , 'status': '403'})
             #Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
         else: 
-            return super(HomeViewSet, self).create(arg)
+            return super(HomeViewSet, self).create(args)
         
