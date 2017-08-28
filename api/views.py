@@ -21,7 +21,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
         #ipdb.set_trace()
         meta = request.META
-        body = json.loads(request.body)
+        body = json.loads(request.body, indent=4, sort_keys=True)
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta['HTTP_AUTHORIZATION'])
         print(body)
