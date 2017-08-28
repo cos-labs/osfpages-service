@@ -33,7 +33,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         print(body['data']['id'])
 
         
-        return Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions']})
+        return Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
         
         #return super(HomeViewSet, self).create(arg)
         
