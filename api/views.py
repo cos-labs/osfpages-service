@@ -33,8 +33,10 @@ class HomeViewSet(viewsets.ModelViewSet):
         print(body['data']['id'])
         
         if len(r.json()['data']['attributes']['current_user_permissions']) == 1:
+            print('NOOOOO PERMS perms ')
             return Response({'ERROR_MESSAGE':'Error: you do not have write access to this project' , 'status': '403'})
             #Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
-        else: 
+        else:
+            print('the user has perms ')
             return super(HomeViewSet, self).create(arg)
         
