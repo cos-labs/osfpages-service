@@ -20,8 +20,10 @@ class HomeViewSet(viewsets.ModelViewSet):
         r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
         #ipdb.set_trace()
         meta = request.META
+        body = request.body
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta['HTTP_AUTHORIZATION'])
+        print(body['id'])
         return Response({'Err String':'error yo','Body': request.body['id'], 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
