@@ -23,7 +23,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         body = request.body
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta['HTTP_AUTHORIZATION'])
-        print(body.data)
+        print(body['data'])
         return Response({'Err String':'error yo','Body': request.body, 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
