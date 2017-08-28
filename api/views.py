@@ -20,6 +20,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
         #ipdb.set_trace()
         meta = request.META
+        print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta)
         return Response({'Err String':'error yo','Body': request.body, 'json': r.json()})
         
