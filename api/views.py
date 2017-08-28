@@ -22,7 +22,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         body = json.loads(request.body)
         
         url = 'https://staging-api.osf.io/v2/nodes/'+body['data']['id']+'/'
-        headers = {'HTTP_AUTHORIZATION': meta['HTTP_AUTHORIZATION']} 
+        headers = {'AUTHORIZATION': meta['HTTP_AUTHORIZATION']} 
         r = requests.get(url, headers=headers)
         #ipdb.set_trace()
         
