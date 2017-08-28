@@ -21,7 +21,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         #ipdb.set_trace()
         meta = request.META
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
-        print(meta)
+        print(meta['HTTP_AUTHORIZATION'])
         return Response({'Err String':'error yo','Body': request.body, 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
