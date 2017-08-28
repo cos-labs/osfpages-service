@@ -31,9 +31,8 @@ class HomeViewSet(viewsets.ModelViewSet):
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta['HTTP_AUTHORIZATION'])
         print(body['data']['id'])
-
-        
-        return Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
-        
-        #return super(HomeViewSet, self).create(arg)
+        if len(r.json()['data']['attributes']['current_user_permissions']) > 1:
+            return Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
+        else: 
+            return super(HomeViewSet, self).create(arg)
         
