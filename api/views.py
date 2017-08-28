@@ -38,5 +38,5 @@ class HomeViewSet(viewsets.ModelViewSet):
             #Response({'Err String':'error yo','Body': request.body, 'json': r.json()['data']['attributes']['current_user_permissions'][1]})
         else:
             print('the user has perms ')
-            return super(HomeViewSet, self).create(arg)
+            return super(HomeViewSet, self).create(request, args, kwargs)
         
