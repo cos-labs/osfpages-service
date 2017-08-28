@@ -18,13 +18,20 @@ class HomeViewSet(viewsets.ModelViewSet):
     serializer_class = HomeSerializer
 
     def create(self, request, *args, **kwargs):
-        r = requests.get('https://staging-api.osf.io/v2/nodes/xyp8r/')
-        #ipdb.set_trace()
         meta = request.META
         body = json.loads(request.body)
+        
+        url = 'https://staging-api.osf.io/v2/nodes/'+body['data']['id']+'/'
+        headers = {'HTTP_AUTHORIZATION': meta['HTTP_AUTHORIZATION']} 
+        r = requests.get(url, headers=headers)
+        #ipdb.set_trace()
+        
+
+        
         print('!!!!!!!META PRINTED BELOW   !!!!!!!!')
         print(meta['HTTP_AUTHORIZATION'])
         print(body['data']['id'])
+        
         return Response({'Err String':'error yo','Body': request.body, 'json': r.json()})
         
         #return super(HomeViewSet, self).create(arg)
